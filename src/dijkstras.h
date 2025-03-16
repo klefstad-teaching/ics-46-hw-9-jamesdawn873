@@ -27,8 +27,24 @@ struct Edge {
 
 struct Graph : public vector<vector<Edge>> {
     int numVertices=0;
+		// Add extration operator for testing
+		inline friend ostream &operator<<(ostream &out, Graph &g){
+			for (vector<Edge> ve: g){
+				for (Edge e: ve){
+					out << e << " ";
+				}
+			}
+			return out;
+		}
 };
 
+inline ostream& operator<<(ostream& out, vector<int>& v){
+	for (int i: v){
+		out << i << " ";
+	}
+	out << endl;
+	return out;
+}
 inline istream& operator>>(istream& in, Graph& G) {
     if (!(in >> G.numVertices))
         throw runtime_error("Unable to find input file");
