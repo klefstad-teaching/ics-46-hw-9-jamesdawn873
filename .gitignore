@@ -1,3 +1,4 @@
 *.swp
 *.nfs*
 build/
+.ipynb_checkpoints
