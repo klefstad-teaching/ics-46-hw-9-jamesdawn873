@@ -42,11 +42,18 @@ TEST(dijkstras, extract_shortest_path){
 	}
 	EXPECT_EQ(teststream.str(), "0 \n0 3 1 \n0 3 1 2 \n0 3 \n");
 }
-
-// WORD LADDER
-
-TEST(wordladder, file){
-	 
+TEST(dijkstras, extract_shortest_path_largest){
+	Graph G ;
+	file_to_graph("../src/largest.txt", G);
+	stringstream teststream;
+	vector<int> previous(G.numVertices);
+	vector<int> distances = dijkstra_shortest_path(G, 0, previous);
+		vector<int> path = extract_shortest_path(distances, previous, 2);
+		teststream << path;
+	EXPECT_EQ(teststream.str(), "0 \n0 3 1 \n0 3 1 2 \n0 3 \n");
 }
+
+
+
 
 
