@@ -86,10 +86,14 @@ void load_words(set<string> &word_list, const string &file_name) {
   }
 }
 void print_word_ladder(const vector<string> &ladder) {
-  for (string word : ladder)
+  cout << "Word ladder found: ";
+	for (string word : ladder)
     cout << word << " ";
 }
-#define my_assert(e) {cout << #e << ((e) ? " passed": " failed") << endl;}
+#define my_assert(e)                                                           \
+  {                                                                            \
+    cout << #e << ((e) ? " passed" : " failed") << endl;                       \
+  }
 void verify_word_ladder() {
   set<string> word_list;
   load_words(word_list, "../src/words.txt");

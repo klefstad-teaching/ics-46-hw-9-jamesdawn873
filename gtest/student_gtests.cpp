@@ -42,3 +42,11 @@ TEST(dijkstras, extract_shortest_path){
 	}
 	EXPECT_EQ(teststream.str(), "0 \n0 3 1 \n0 3 1 2 \n0 3 \n");
 }
+
+// WORD LADDER
+
+TEST(wordladder, file){
+	 
+}
+
+
